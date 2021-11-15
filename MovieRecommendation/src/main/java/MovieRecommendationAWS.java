@@ -17,7 +17,7 @@ public class MovieRecommendationAWS {
         spark.sparkContext().hadoopConfiguration().set("fs.s3a.secret.key", " ");
         spark.sparkContext().hadoopConfiguration().set("fs.s3a.impl"," ");
         spark.sparkContext().hadoopConfiguration().set("com.amazonaws.services.s3.enableV4", "true");
-        spark.sparkContext().hadoopConfiguration().set("fs.s3a.aws.credentials.provider","org.apache.hadoop.fs.s3a.BasicAWSCredentialsProvider");
+        spark.sparkContext().hadoopConfiguration().set("fs.s3a.aws.credentials.provider"," ");
         spark.sparkContext().hadoopConfiguration().set("fs.s3a.endpoint", " ");
 
         //从原始csv数据创建user, movie, rating的dataframe
