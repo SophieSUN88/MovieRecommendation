@@ -13,12 +13,12 @@ public class RecommendMovieAWS {
                 .appName("MovieRecommendationApp")
                 .enableHiveSupport()
                 .getOrCreate();
-        spark.sparkContext().hadoopConfiguration().set("fs.s3a.access.key", "AKIAIUWKZOZGOE2L37KA");
-        spark.sparkContext().hadoopConfiguration().set("fs.s3a.secret.key", "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");
-        spark.sparkContext().hadoopConfiguration().set("fs.s3a.impl","org.apache.hadoop.fs.s3a.S3AFileSystem");
+        spark.sparkContext().hadoopConfiguration().set("fs.s3a.access.key", " ");
+        spark.sparkContext().hadoopConfiguration().set("fs.s3a.secret.key", " ");
+        spark.sparkContext().hadoopConfiguration().set("fs.s3a.impl"," ");
         spark.sparkContext().hadoopConfiguration().set("com.amazonaws.services.s3.enableV4", "true");
-        spark.sparkContext().hadoopConfiguration().set("fs.s3a.aws.credentials.provider","org.apache.hadoop.fs.s3a.BasicAWSCredentialsProvider");
-        spark.sparkContext().hadoopConfiguration().set("fs.s3a.endpoint", "us-east-2.amazonaws.com");
+        spark.sparkContext().hadoopConfiguration().set("fs.s3a.aws.credentials.provider"," ");
+        spark.sparkContext().hadoopConfiguration().set("fs.s3a.endpoint", " ");
 
         RecommendMovieAWS main = new RecommendMovieAWS();
         Dataset<Row> movieSimilarity = main.getMovieSimilarity(spark);
@@ -29,7 +29,7 @@ public class RecommendMovieAWS {
     }
 
     public Dataset<Row> getMovieSimilarity(SparkSession spark){
-        String path = "s3://my-spark-code/movie_relationship";
+        String path = "s3: ";
         Dataset<Row> df = spark
                 .read()
                 .format("csv")
@@ -45,7 +45,7 @@ public class RecommendMovieAWS {
                 .format("csv")
                 .option("inferSchema", true)
                 .option("header", true)
-                .csv("s3://my-spark-code/movie_names.csv")
+                .csv("s3:// ")
                 .toDF()
                 .select("id", "original_title");
 
