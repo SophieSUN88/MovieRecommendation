@@ -13,12 +13,12 @@ public class MovieRecommendationAWS {
                 .getOrCreate();
         MovieRecommendationAWS main = new MovieRecommendationAWS();
 
-        spark.sparkContext().hadoopConfiguration().set("fs.s3a.access.key", "AKIAWZFAEMPLHX52WIMK");
-        spark.sparkContext().hadoopConfiguration().set("fs.s3a.secret.key", "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");
-        spark.sparkContext().hadoopConfiguration().set("fs.s3a.impl","org.apache.hadoop.fs.s3a.S3AFileSystem");
+        spark.sparkContext().hadoopConfiguration().set("fs.s3a.access.key", " ");
+        spark.sparkContext().hadoopConfiguration().set("fs.s3a.secret.key", " ");
+        spark.sparkContext().hadoopConfiguration().set("fs.s3a.impl"," ");
         spark.sparkContext().hadoopConfiguration().set("com.amazonaws.services.s3.enableV4", "true");
         spark.sparkContext().hadoopConfiguration().set("fs.s3a.aws.credentials.provider","org.apache.hadoop.fs.s3a.BasicAWSCredentialsProvider");
-        spark.sparkContext().hadoopConfiguration().set("fs.s3a.endpoint", "us-east-2.amazonaws.com");
+        spark.sparkContext().hadoopConfiguration().set("fs.s3a.endpoint", " ");
 
         //从原始csv数据创建user, movie, rating的dataframe
         Dataset<Row> userRating = main.getUserRating(spark, args[0]);
@@ -122,6 +122,6 @@ public class MovieRecommendationAWS {
     }
 
     public void writeToLocalFile(Dataset<MovieSimilarity> movieSimilarities) {
-        movieSimilarities.coalesce(10).write().csv("s3://movie-similarity/movie_relationship");
+        movieSimilarities.coalesce(10).write().csv(" ");
     }
 }
