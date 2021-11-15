@@ -13,12 +13,12 @@ public class MovieRecommendationHive {
                 .getOrCreate();
         MovieRecommendationHive main = new MovieRecommendationHive();
 
-        spark.sparkContext().hadoopConfiguration().set("fs.s3a.access.key", "AKIAWZFAEMPLHX52WIMK");
-        spark.sparkContext().hadoopConfiguration().set("fs.s3a.secret.key", "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");
-        spark.sparkContext().hadoopConfiguration().set("fs.s3a.impl","org.apache.hadoop.fs.s3a.S3AFileSystem");
+        spark.sparkContext().hadoopConfiguration().set("fs.s3a.access.key", " ");
+        spark.sparkContext().hadoopConfiguration().set("fs.s3a.secret.key", " ");
+        spark.sparkContext().hadoopConfiguration().set("fs.s3a.impl"," ");
         spark.sparkContext().hadoopConfiguration().set("com.amazonaws.services.s3.enableV4", "true");
-        spark.sparkContext().hadoopConfiguration().set("fs.s3a.aws.credentials.provider","org.apache.hadoop.fs.s3a.BasicAWSCredentialsProvider");
-        spark.sparkContext().hadoopConfiguration().set("fs.s3a.endpoint", "us-east-2.amazonaws.com");
+        spark.sparkContext().hadoopConfiguration().set("fs.s3a.aws.credentials.provider"," ");
+        spark.sparkContext().hadoopConfiguration().set("fs.s3a.endpoint", " ");
         //从原始csv数据创建user, movie, rating的dataframe ， 通过args 传递读取文件的路径
         Dataset<Row> userRating = main.getUserRating(spark, args[0]);
 
@@ -123,6 +123,6 @@ public class MovieRecommendationHive {
     public void writeToLocalFile(Dataset<MovieSimilarity> movieSimilarities) {
         // insetInto means write to spark HIVE based on HDFS , put hte path of HDFS
         // create table in HDFS ahead, name , schema,
-        movieSimilarities.coalesce(10).write().insertInto("bigdata.movie_similarity");
+        movieSimilarities.coalesce(10).write().insertInto(" ");
     }
 }
